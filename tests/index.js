@@ -6,7 +6,7 @@ if (process.env.DEBUG) {
 }
 var usb = USBSerial('/dev/cu.HUAWEIMobile-Pcui');
 
-usb.getNotified(function (field) {
-  debug(field + ' changed');
+usb.getNotified(function (field, oldValue, newValue) {
+  debug('%s changed from %s to %s', field, oldValue, newValue);
   debug(usb.getInfo());
 })
