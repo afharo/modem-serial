@@ -40,4 +40,4 @@ Help is really welcome :smiley:
 
 | Manufacturer | Model | Comments |
 |:---|:---|---|
-|Huawei| E173u | Signal Quality parameters are not provided by this device (only RSSI) |
+|Huawei| E173u | Signal Quality parameters are not provided by this device (only RSSI)<br>**IMPORTANT**: Firmware version 11.126.16.00.00 doesn't work correctly with ATH command (hangup). Consider updating firmware. |

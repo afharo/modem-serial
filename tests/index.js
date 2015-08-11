@@ -9,4 +9,14 @@ var usb = USBSerial('/dev/cu.HUAWEIMobile-Pcui');
 usb.getNotified(function (field, oldValue, newValue) {
   debug('%s changed from %s to %s', field, oldValue, newValue);
   debug(usb.getInfo());
+});
+
+usb.onCallStatusChange(function (status, ts) {
+	debug('[%d] Call is in status: %s', ts, status);
+	debug(usb.getCallInfo());
 })
+
+setTimeout(function(){
+	debug("CALLING")
+	usb.call('XXXXXXX', 10);
+},10000);
