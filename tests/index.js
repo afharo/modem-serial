@@ -16,7 +16,9 @@ usb.onCallStatusChange(function (status, ts) {
 	debug(usb.getCallInfo());
 })
 
-setTimeout(function(){
-	debug("CALLING")
-	usb.call('XXXXXXX', 10);
-},10000);
+if (process.env.NUMBER) {
+	setTimeout(function(){
+		debug("CALLING")
+		usb.call(process.env.NUMBER, 10);
+	},10000);
+}
