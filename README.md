@@ -23,14 +23,35 @@ var usb = USBSerial('/dev/ttyUSB0');
 ### 3. API functions
 #### getInfo()
 It returns all the information gotten by the moment of the device.
+#### getCallInfo()
+It returns the current/last call info.
+#### call(*number*, *duration*)
+It calls the specified *number* and will hangup after *duration* seconds.
+#### answer(*duration*, *timeout*)
+Expects an incoming call in *timeout* seconds and will hangup after *duration* seconds.
+#### hangup()
+Hangups current call.
+#### connect(*err*, *callback*)
+**NOT WORKING AT THIS TIME. It will in future releases**
+It executes the connection process for this model.
 
 ### 4. Events
-If you want to be notified when some info is changed, you can call the getNotified function, using as callback, the function you want to execute when something has changed.
+Functions to catch events.
+#### getNotified(*callback*)
+If you want to be notified when some info has changed, you can call the getNotified function, using as callback, the function you want to execute when something has changed.
 ```javascript
 usb.getNotified(function (field, oldValue, newValue) {
-  console.log(field + ' changed');
+  console.log('%s changed from %s to %s', field, oldValue, newValue);
   console.log(usb.getInfo());
-})
+});
+```
+#### onCallStatusChange(*callback*)
+This event is called when the call status has changed.
+```javascript
+usb.onCallStatusChange(function (status, ts) {
+	debug('[%d] Call is in status: %s', ts, status);
+	debug(usb.getCallInfo());
+});
 ```
 
 ## Supported Models
