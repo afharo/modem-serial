@@ -1,13 +1,30 @@
 {
   "name": "modem-serial",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Communication module for serial modems control",
+  "keywords": [
+    "dongle",
+    "modem",
+    "GSM",
+    "serial"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "DEBUG=modem-serial:* node tests/index.js && exit 1"
   },
   "author": "afharo",
-  "license": "ISC",
+  "homepage": "https://github.com/afharo/modem-serial",
+  "bugs": {
+    "url": "https://github.com/afharo/modem-serial/issues"
+  },
+  "license": {
+    "type" : "ISC",
+    "url" : "http://opensource.org/licenses/ISC"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/afharo/modem-serial.git"
+  },
   "dependencies": {
     "serialport": "^1.7.4"
   },
