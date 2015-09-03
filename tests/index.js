@@ -11,7 +11,7 @@ if (process.env.DEBUG) {
 } else {
 	debug = function() {console.log.apply(this, arguments);};
 }
-usb = new USBSerial('/dev/cu.HUAWEIMobile-Pcui');
+usb = new USBSerial(dev);
 
 usb.getNotified(function (field, oldValue, newValue) {
   debug('%s changed from %s to %s', field, oldValue, newValue);
