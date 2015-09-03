@@ -3,6 +3,8 @@
 
 var USBSerial, debug, usb;
 
+var dev = process.env.DEV || '/dev/cu.HUAWEIMobile-Pcui';
+
 USBSerial = require('../index.js');
 if (process.env.DEBUG) {
 	debug = require('debug')('modem-serial:test');
