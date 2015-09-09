@@ -68,6 +68,10 @@ To test this module, run the command:
 ```shell
 npm test
 ```
+This, by default, will try to open the device in `/dev/cu.HUAWEIMobile-Pcui`. If your modem linked with other name (pe: `/dev/ttyUSB0`), call it using:
+```shell
+DEV=/dev/ttyUSB0 npm test
+```
 
 If you want to test the outgoing calling function, just add a NUMBER environment variable
 ```shell
