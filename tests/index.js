@@ -27,5 +27,5 @@ if (process.env.NUMBER) {
 	setTimeout(function(){
 		debug("CALLING");
 		usb.call(process.env.NUMBER, 10);
-	},10000);
+	},60000);
 }
