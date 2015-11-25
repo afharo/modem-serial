@@ -77,3 +77,6 @@ If you want to test the outgoing calling function, just add a NUMBER environment
 ```shell
 NUMBER=XXXXXX npm test
 ```
+
+## To-Do's
+- Get endingStatus and hangupCause for CDMA
