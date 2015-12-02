@@ -25,12 +25,21 @@ var usb = USBSerial('/dev/ttyUSB0');
 It returns all the information gotten by the moment of the device.
 #### getCallInfo()
 It returns the current/last call info.
+#### setTTL(*ttl*)
+Sets *ttl* milliseconds between each full radio info update.
+#### setDefaultDuration(*duration*)
+Sets default *duration* seconds for outgoing & incoming calls in which duration is not indicated (default: 90 seconds).
 #### call(*number*, *duration*)
 It calls the specified *number* and will hangup after *duration* seconds.
 #### answer(*duration*, *timeout*)
 Expects an incoming call in *timeout* seconds and will hangup after *duration* seconds.
 #### hangup()
 Hangups current call.
+#### destroy()
+Closes connection.
+#### restart()
+Restart device.
+**Will cause unplugs from system.**
 #### connect(*err*, *callback*)
 **NOT WORKING AT THIS TIME. It will in future releases**
 It executes the connection process for this model.
@@ -62,6 +71,7 @@ Help is really welcome :smiley:
 | Manufacturer | Model | Comments |
 |:---|:---|---|
 |Huawei| E173u | Signal Quality parameters are not provided by this device (only RSSI)<br>**IMPORTANT**: Firmware version 11.126.16.00.00 doesn't work correctly with ATH command (hangup). Consider updating firmware. |
+|QualComm| BU580 | Features working: provider and RSSI information and call actions. |
 
 ## Testing
 To test this module, run the command:
