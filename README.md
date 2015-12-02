@@ -21,6 +21,8 @@ var usb = USBSerial('/dev/ttyUSB0');
 ```
 
 ### 3. API functions
+#### isOpen()
+It returns `true` if the device is still open for writes.
 #### getInfo()
 It returns all the information gotten by the moment of the device.
 #### getCallInfo()
