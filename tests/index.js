@@ -24,6 +24,7 @@ usb.onCallStatusChange(function (status, ts) {
 });
 
 usb.setTTL(10000);
+usb.setDefaultDuration(10);
 
 if (process.env.NUMBER) {
 	setTimeout(function(){
