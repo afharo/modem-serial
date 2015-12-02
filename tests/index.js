@@ -23,6 +23,8 @@ usb.onCallStatusChange(function (status, ts) {
 	debug(usb.getCallInfo());
 });
 
+usb.setTTL(10000);
+
 if (process.env.NUMBER) {
 	setTimeout(function(){
 		debug("CALLING");
