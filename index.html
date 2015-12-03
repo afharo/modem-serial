@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Modem-serial by afharo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Modem-serial</h1>
+      <h2 class="project-tagline">This NodeJS utility aims to make it easy to interact with USB dongles, providing functions to get info, connect, make calls with just an API call.</h2>
+      <a href="https://github.com/afharo/modem-serial" class="btn">View on GitHub</a>
+      <a href="https://github.com/afharo/modem-serial/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/afharo/modem-serial/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="modem-serial" class="anchor" href="#modem-serial" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modem Serial</h1>
+
+<p>This NodeJS utility aims to make it easy to interact with USB dongles, providing functions to get info, connect, make calls with just a function. This module will take care of all communications with the device.</p>
+
+<p><strong>IMPORTANT NOTE</strong>: This module its in a very early alpha version. I do not recommend using it in production environments.</p>
+
+<h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use it</h2>
+
+<h3>
+<a id="1-installation" class="anchor" href="#1-installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Installation</h3>
+
+<p>To install it, you just have to install it as a normal npm module:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install modem-serial</pre></div>
+
+<h3>
+<a id="2-initialization" class="anchor" href="#2-initialization" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Initialization</h3>
+
+<p>In order to initialize de device and the module, you must require it and use the constructor passing as argument the route to your device:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> USBSerial <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>modem-serial<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> usb <span class="pl-k">=</span> <span class="pl-en">USBSerial</span>(<span class="pl-s"><span class="pl-pds">'</span>/dev/ttyUSB0<span class="pl-pds">'</span></span>);</pre></div>
+
+<h3>
+<a id="3-api-functions" class="anchor" href="#3-api-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. API functions</h3>
+
+<h4>
+<a id="isopen" class="anchor" href="#isopen" aria-hidden="true"><span class="octicon octicon-link"></span></a>isOpen()</h4>
+
+<p>It returns <code>true</code> if the device is still open for writes.</p>
+
+<h4>
+<a id="getinfo" class="anchor" href="#getinfo" aria-hidden="true"><span class="octicon octicon-link"></span></a>getInfo()</h4>
+
+<p>It returns all the information gotten by the moment of the device.</p>
+
+<h4>
+<a id="getcallinfo" class="anchor" href="#getcallinfo" aria-hidden="true"><span class="octicon octicon-link"></span></a>getCallInfo()</h4>
+
+<p>It returns the current/last call info.</p>
+
+<h4>
+<a id="setttlttl" class="anchor" href="#setttlttl" aria-hidden="true"><span class="octicon octicon-link"></span></a>setTTL(<em>ttl</em>)</h4>
+
+<p>Sets <em>ttl</em> milliseconds between each full radio info update.</p>
+
+<h4>
+<a id="setdefaultdurationduration" class="anchor" href="#setdefaultdurationduration" aria-hidden="true"><span class="octicon octicon-link"></span></a>setDefaultDuration(<em>duration</em>)</h4>
+
+<p>Sets default <em>duration</em> seconds for outgoing &amp; incoming calls in which duration is not indicated (default: 90 seconds).</p>
+
+<h4>
+<a id="callnumber-duration" class="anchor" href="#callnumber-duration" aria-hidden="true"><span class="octicon octicon-link"></span></a>call(<em>number</em>, <em>duration</em>)</h4>
+
+<p>It calls the specified <em>number</em> and will hangup after <em>duration</em> seconds.</p>
+
+<h4>
+<a id="answerduration-timeout" class="anchor" href="#answerduration-timeout" aria-hidden="true"><span class="octicon octicon-link"></span></a>answer(<em>duration</em>, <em>timeout</em>)</h4>
+
+<p>Expects an incoming call in <em>timeout</em> seconds and will hangup after <em>duration</em> seconds.</p>
+
+<h4>
+<a id="hangup" class="anchor" href="#hangup" aria-hidden="true"><span class="octicon octicon-link"></span></a>hangup()</h4>
+
+<p>Hangups current call.</p>
+
+<h4>
+<a id="destroy" class="anchor" href="#destroy" aria-hidden="true"><span class="octicon octicon-link"></span></a>destroy()</h4>
+
+<p>Closes connection.</p>
+
+<h4>
+<a id="restart" class="anchor" href="#restart" aria-hidden="true"><span class="octicon octicon-link"></span></a>restart()</h4>
+
+<p>Restart device.
+<strong>Will cause unplugs from system.</strong></p>
+
+<h4>
+<a id="connecterr-callback" class="anchor" href="#connecterr-callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>connect(<em>err</em>, <em>callback</em>)</h4>
+
+<p><strong>NOT WORKING AT THIS TIME. It will in future releases</strong>
+It executes the connection process for this model.</p>
+
+<h3>
+<a id="4-events" class="anchor" href="#4-events" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Events</h3>
+
+<p>Functions to catch events.</p>
+
+<h4>
+<a id="getnotifiedcallback" class="anchor" href="#getnotifiedcallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>getNotified(<em>callback</em>)</h4>
+
+<p>If you want to be notified when some info has changed, you can call the getNotified function, using as callback, the function you want to execute when something has changed.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">usb</span>.<span class="pl-en">getNotified</span>(<span class="pl-k">function</span> (<span class="pl-smi">field</span>, <span class="pl-smi">oldValue</span>, <span class="pl-smi">newValue</span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>%s changed from %s to %s<span class="pl-pds">'</span></span>, field, oldValue, newValue);
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-smi">usb</span>.<span class="pl-en">getInfo</span>());
+});</pre></div>
+
+<h4>
+<a id="oncallstatuschangecallback" class="anchor" href="#oncallstatuschangecallback" aria-hidden="true"><span class="octicon octicon-link"></span></a>onCallStatusChange(<em>callback</em>)</h4>
+
+<p>This event is called when the call status has changed.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">usb</span>.<span class="pl-en">onCallStatusChange</span>(<span class="pl-k">function</span> (<span class="pl-smi">status</span>, <span class="pl-smi">ts</span>) {
+    <span class="pl-en">debug</span>(<span class="pl-s"><span class="pl-pds">'</span>[%d] Call is in status: %s<span class="pl-pds">'</span></span>, ts, status);
+    <span class="pl-en">debug</span>(<span class="pl-smi">usb</span>.<span class="pl-en">getCallInfo</span>());
+});</pre></div>
+
+<h2>
+<a id="supported-models" class="anchor" href="#supported-models" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported Models</h2>
+
+<p>By the moment, I have tried only with some Huawei models. As soon as new devices are tested, this list will be updated.</p>
+
+<p>Help is really welcome <img class="emoji" title=":smiley:" alt=":smiley:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f603.png" height="20" width="20" align="absmiddle"></p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Manufacturer</th>
+<th align="left">Model</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Huawei</td>
+<td align="left">E173u</td>
+<td>Signal Quality parameters are not provided by this device (only RSSI)<br><strong>IMPORTANT</strong>: Firmware version 11.126.16.00.00 doesn't work correctly with ATH command (hangup). Consider updating firmware.</td>
+</tr>
+<tr>
+<td align="left">QualComm</td>
+<td align="left">BU580</td>
+<td>Features working: provider and RSSI information and call actions.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>To test this module, run the command:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm <span class="pl-c1">test</span></pre></div>
+
+<p>This, by default, will try to open the device in <code>/dev/cu.HUAWEIMobile-Pcui</code>. If your modem linked with other name (pe: <code>/dev/ttyUSB0</code>), call it using:</p>
+
+<div class="highlight highlight-source-shell"><pre>DEV=/dev/ttyUSB0 npm <span class="pl-c1">test</span></pre></div>
+
+<p>If you want to test the outgoing calling function, just add a NUMBER environment variable</p>
+
+<div class="highlight highlight-source-shell"><pre>NUMBER=XXXXXX npm <span class="pl-c1">test</span></pre></div>
+
+<h2>
+<a id="to-dos" class="anchor" href="#to-dos" aria-hidden="true"><span class="octicon octicon-link"></span></a>To-Do's</h2>
+
+<ul>
+<li>Get endingStatus and hangupCause for CDMA</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/afharo/modem-serial">Modem-serial</a> is maintained by <a href="https://github.com/afharo">afharo</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
