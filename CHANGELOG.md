@@ -13,3 +13,6 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.1.3
 - Get calling number in the correct way.
+
+# 0.1.4
+- Remove \r after subtechnology
