@@ -16,3 +16,6 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.1.4
 - Remove \r after subtechnology
+
+# 0.1.5
+- Qs must be local variables
