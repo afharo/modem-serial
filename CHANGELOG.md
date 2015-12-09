@@ -24,3 +24,6 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 - Better 'restart' command
 - Timeout Dialing
 - Timeout calling
+
+# 0.1.7
+- Better 'restart' command
