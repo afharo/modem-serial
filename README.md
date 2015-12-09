@@ -40,7 +40,7 @@ Hangups current call.
 #### destroy()
 Closes connection.
 #### restart()
-Restart device.
+Restarts device.
 **Will cause unplugs from system.**
 #### connect(*err*, *callback*)
 **NOT WORKING AT THIS TIME. It will in future releases**

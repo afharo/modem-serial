@@ -19,3 +19,7 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.1.5
 - Qs must be local variables
+
+# 0.1.6
+- Better 'restart' command
+- Timeout Dialing
