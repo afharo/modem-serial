@@ -30,3 +30,6 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.1.8
 - Technology CDMA reports as technology '2', subtechnology 'CDMA'
+
+# 0.1.9
+- Bug fix in unsolicited ^MODE message
