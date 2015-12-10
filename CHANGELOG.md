@@ -33,3 +33,6 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.1.9
 - Bug fix in unsolicited ^MODE message
+
+# 0.2.0
+- Pre-production release.
