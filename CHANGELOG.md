@@ -36,3 +36,9 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.2.0
 - Pre-production release.
+
+# 0.2.1
+- Check if lac_id and cell_id are reported
+
+# 0.2.2
+- Check if subtechnology is reported

@@ -1,6 +1,6 @@
 {
   "name": "modem-serial",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Communication module for serial modems control: This NodeJS utility aims to make it easy to interact with USB dongles, providing functions to get info, connect, make calls with just an API call.",
   "keywords": [
     "dongle",
