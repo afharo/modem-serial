@@ -42,3 +42,6 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.2.2
 - Check if subtechnology is reported
+
+# 0.2.3
+- CDMA technology in COPS
