@@ -45,3 +45,6 @@ Support for radio params information and calls in Huawei GSM modems and QualComm
 
 # 0.2.3
 - CDMA technology in COPS
+
+# 0.2.4
+- Remove AT+CLIP from initialization as breaks other devices use.
